@@ -1,0 +1,97 @@
+1673935259939	geckodriver	INFO	Listening on 127.0.0.1:35845
+1673935260443	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "47099" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileqBxTqa"
+[GFX1-]: glxtest: libEGL missing
+1673935261488	Marionette	INFO	Marionette enabled
+1673935261491	Marionette	INFO	Listening on port 42493
+Read port: 42493
+WebDriver BiDi listening on ws://127.0.0.1:47099
+1673935261594	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileqBxTqa/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:47099/devtools/browser/372bee44-af5f-4b3a-8409-55c9bba9e18b
+JavaScript error: https://cdn.evgnet.com/beacon/bunnings/bunnings_retail_prod/scripts/evergage.min.js, line 1257: TypeError: store is undefined
+JavaScript error: https://apps.bazaarvoice.com/deployments/bunnings-nz/main_site/production/en_AU/bv.js, line 22: TypeError: t is undefined
+JavaScript error: https://apps.bazaarvoice.com/deployments/bunnings-nz/main_site/production/en_AU/bv.js, line 22: TypeError: d.parentNode is null
+JavaScript error: https://apps.bazaarvoice.com/deployments/bunnings-nz/main_site/production/en_AU/bv.js, line 22: TypeError: t is undefined
+JavaScript error: https://apps.bazaarvoice.com/deployments/bunnings-nz/main_site/production/en_AU/bv.js, line 22: TypeError: d.parentNode is null
+JavaScript error: https://cdn.evgnet.com/beacon/bunnings/bunnings_retail_prod/scripts/evergage.min.js, line 78: TypeError: c is undefined
+JavaScript warning: https://beacon.riskified.com/?shop=bunnings&sid=504a08b0-962c-11ed-a279-31c4c5cd3bb7, line 7: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+[GFX1-]: Couldn't sanitize RENDERER device: D3D12
+JavaScript warning: https://nebula-cdn.kampyle.com/au/wau/48023/forms/3715/1637629206881/nebula-generic.js, line 2036: unreachable code after return statement
+1673935301126	geckodriver	INFO	Listening on 127.0.0.1:57539
+1673935301629	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "51341" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileI8aZy0"
+[GFX1-]: glxtest: libEGL missing
+1673935301970	Marionette	INFO	Marionette enabled
+1673935301973	Marionette	INFO	Listening on port 42705
+WebDriver BiDi listening on ws://127.0.0.1:51341
+Read port: 42705
+1673935302126	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileI8aZy0/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51341/devtools/browser/294e52f6-377b-43f1-98a2-48559ab3a2d9
+JavaScript error: https://cdn.evgnet.com/beacon/bunnings/bunnings_retail_prod/scripts/evergage.min.js, line 1257: TypeError: store is undefined
+JavaScript error: https://cdn.evgnet.com/beacon/bunnings/bunnings_retail_prod/scripts/evergage.min.js, line 78: TypeError: c is undefined
+JavaScript warning: https://beacon.riskified.com/?shop=bunnings&sid=6815cce0-962c-11ed-8d77-9d79de296d0d, line 7: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+[GFX1-]: Couldn't sanitize RENDERER device: D3D12
+JavaScript warning: https://nebula-cdn.kampyle.com/au/wau/48023/forms/3715/1637629206881/nebula-generic.js, line 2036: unreachable code after return statement
+1673935322393	Marionette	INFO	Stopped listening on port 42493
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1673935327062	Marionette	INFO	Stopped listening on port 42705
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1673935482991	geckodriver	INFO	Listening on 127.0.0.1:58781
+1673935483494	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "47881" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilehrr98a"
+[GFX1-]: glxtest: libEGL missing
+1673935484515	Marionette	INFO	Marionette enabled
+1673935484518	Marionette	INFO	Listening on port 33585
+WebDriver BiDi listening on ws://127.0.0.1:47881
+Read port: 33585
+1673935484704	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilehrr98a/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:47881/devtools/browser/8fa6f08d-6508-476c-b70e-caf62cd64120
+JavaScript error: https://cdn.evgnet.com/beacon/bunnings/bunnings_retail_prod/scripts/evergage.min.js, line 1257: TypeError: store is undefined
+JavaScript error: https://cdn.evgnet.com/beacon/bunnings/bunnings_retail_prod/scripts/evergage.min.js, line 78: TypeError: c is undefined
+JavaScript warning: https://beacon.riskified.com/?shop=bunnings&sid=d5025260-962c-11ed-93d0-e97fba282dfb, line 7: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+[GFX1-]: Couldn't sanitize RENDERER device: D3D12
+JavaScript warning: https://nebula-cdn.kampyle.com/au/wau/48023/forms/3715/1637629206881/nebula-generic.js, line 2036: unreachable code after return statement
+1673935500540	Marionette	INFO	Stopped listening on port 33585
+1673935596559	geckodriver	INFO	Listening on 127.0.0.1:57275
+1673935597063	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "57627" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileEzvs5J"
+[GFX1-]: glxtest: libEGL missing
+1673935598061	Marionette	INFO	Marionette enabled
+1673935598063	Marionette	INFO	Listening on port 33077
+Read port: 33077
+WebDriver BiDi listening on ws://127.0.0.1:57627
+1673935598139	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileEzvs5J/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:57627/devtools/browser/cf8dbb9a-380e-42e0-af3b-b256e8f93fbc
+JavaScript error: https://cdn.evgnet.com/beacon/bunnings/bunnings_retail_prod/scripts/evergage.min.js, line 1257: TypeError: store is undefined
+JavaScript error: https://apps.bazaarvoice.com/deployments/bunnings-nz/main_site/production/en_AU/bv.js, line 22: TypeError: t is undefined
+JavaScript error: https://apps.bazaarvoice.com/apps/swat_reviews/swat_reviews-5.18.8.js, line 2: TypeError: p.parentNode is null
+JavaScript error: https://apps.bazaarvoice.com/deployments/bunnings-nz/main_site/production/en_AU/bv.js, line 22: TypeError: t is undefined
+JavaScript error: https://apps.bazaarvoice.com/apps/swat_reviews/swat_reviews-5.18.8.js, line 2: TypeError: p.parentNode is null
+JavaScript error: https://apps.bazaarvoice.com/deployments/bunnings-nz/main_site/production/en_AU/bv.js, line 22: TypeError: t is undefined
+JavaScript error: https://apps.bazaarvoice.com/apps/swat_reviews/swat_reviews-5.18.8.js, line 2: TypeError: p.parentNode is null
+JavaScript error: https://apps.bazaarvoice.com/deployments/bunnings-nz/main_site/production/en_AU/bv.js, line 22: TypeError: t is undefined
+JavaScript error: https://apps.bazaarvoice.com/apps/swat_reviews/swat_reviews-5.18.8.js, line 2: TypeError: p.parentNode is null
+JavaScript error: https://apps.bazaarvoice.com/deployments/bunnings-nz/main_site/production/en_AU/bv.js, line 22: TypeError: t is undefined
+JavaScript error: https://apps.bazaarvoice.com/apps/swat_reviews/swat_reviews-5.18.8.js, line 2: TypeError: p.parentNode is null
+JavaScript error: https://cdn.evgnet.com/beacon/bunnings/bunnings_retail_prod/scripts/evergage.min.js, line 78: TypeError: c is undefined
+JavaScript warning: https://beacon.riskified.com/?shop=bunnings&sid=1892c500-962d-11ed-831d-57af61c8ac27, line 7: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+[GFX1-]: Couldn't sanitize RENDERER device: D3D12
+JavaScript warning: https://nebula-cdn.kampyle.com/au/wau/48023/forms/3715/1637629206881/nebula-generic.js, line 2036: unreachable code after return statement
+1673935613951	Marionette	INFO	Stopped listening on port 33077
+1673935888430	geckodriver	INFO	Listening on 127.0.0.1:36581
+1673935888432	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "50867" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile5NIqKM"
+[GFX1-]: glxtest: libEGL missing
+1673935889433	Marionette	INFO	Marionette enabled
+1673935889436	Marionette	INFO	Listening on port 45133
+WebDriver BiDi listening on ws://127.0.0.1:50867
+Read port: 45133
+1673935889626	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile5NIqKM/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:50867/devtools/browser/7fc6ed74-f35d-4998-a80f-7a25e74ba330
+JavaScript error: https://cdn.evgnet.com/beacon/bunnings/bunnings_retail_prod/scripts/evergage.min.js, line 1257: TypeError: store is undefined
+JavaScript error: https://cdn.evgnet.com/beacon/bunnings/bunnings_retail_prod/scripts/evergage.min.js, line 78: TypeError: c is undefined
+JavaScript warning: https://beacon.riskified.com/?shop=bunnings&sid=c6492310-962d-11ed-8e69-11d4caa9115c, line 7: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+[GFX1-]: Couldn't sanitize RENDERER device: D3D12
+JavaScript warning: https://nebula-cdn.kampyle.com/au/wau/48023/forms/3715/1637629206881/nebula-generic.js, line 2036: unreachable code after return statement
+1673935901656	Marionette	INFO	Stopped listening on port 45133
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 703: Error: Phase "Sqlite.sys.mjs: wait until all connections are closed" is finished, it is too late to register completion condition "protections.sqlite#0: waiting for shutdown"

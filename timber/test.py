@@ -1,5 +1,6 @@
 ##!/usr/bin/python3
 
+import re
 import time
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -17,17 +18,31 @@ class Scraper:
     browser.quit()
     return html
   
-  def soup_finder(self, html: str, tag: str, classname: str) -> str:
+  def soup_finder(self, html: str, tag: str, classname: str, regex: str) -> str:
     soup = BeautifulSoup(html, 'lxml')
     price = soup.find(tag, class_=classname).text
+    price = re.search(regex,price).group()
+    price = price.strip(" -")
     return price
 
-url = "https://www.bunnings.com.au/90-x-45mm-framing-mgp12-h2-blue-pine-6-0m_p8031448"
-tag = "p"
-classname = "sc-cb9c4042-3 iGDFOw"
+b_url = "https://www.bunnings.com.au/90-x-45mm-framing-mgp10-h2-blue-pine-6-0m_p8031034"
+b_tag = "p"
+b_classname = "sc-cb9c4042-3 iGDFOw"
+b_regex = r'\$\d+\.\d+'
+
+bj_url = "https://www.barrenjoeytimber.com.au/structural-pine-mpg10"
+bj_tag = "div"
+bj_classname = "dmNewParagraph u_1696189223"
+bj_regex = r'\$\d+\.\d+'
+
+c_url = "https://canterburytimbers.com.au/buy/h2-timber-treated-pine-mgp10-90-x-45/"
+c_tag = "span"
+c_classname = "price price--withTax"
+c_regex = r'\s-\s\$\d+\.\d+'
+
 
 scraper = Scraper()
-html = scraper.retrieve_html(url)
-price = scraper.soup_finder(html, tag, classname)
+html = scraper.retrieve_html(c_url)
+price = scraper.soup_finder(html, c_tag, c_classname, c_regex)
 
 print(price)

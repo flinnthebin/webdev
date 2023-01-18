@@ -19,10 +19,10 @@ class Scraper:
     return html
   
   def soup_finder(self, html: str, tag: str, classname: str, regex: str) -> str:
+    # make the soup
     soup = BeautifulSoup(html, 'lxml')
-    price = soup.find(tag, class_=classname).text
-    price = re.search(regex,price).group()
-    price = price.strip(" -")
+    # find the tag and class in the html, regex to search for price, strip whitespace and `-` chars
+    price = re.search(regex, soup.find(tag, class_=classname).text).group().strip(" -")
     return price
 
 b_url = "https://www.bunnings.com.au/90-x-45mm-framing-mgp10-h2-blue-pine-6-0m_p8031034"

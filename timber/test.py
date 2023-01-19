@@ -1,9 +1,13 @@
 ##!/usr/bin/python3
 
+import logging
 import re
 import time
 from bs4 import BeautifulSoup
 from selenium import webdriver
+
+# configure the logging module
+logging.basicConfig(filename="scraper.log", level=logging.ERROR)
 
 class Scraper:
 
@@ -22,7 +26,7 @@ class Scraper:
     # make the soup
     soup = BeautifulSoup(html, 'lxml')
     # find the tag and class in the html, regex to search for price, strip whitespace and `-` chars
-    price = re.search(regex, soup.find(tag, class_=classname).text).group().strip(" -")
+    price = re.search(regex, soup.find(tag, class_=classname).text).group().strip(" $-")
     return price
 
 suppliers = {
@@ -30,19 +34,22 @@ suppliers = {
         "url": "https://www.barrenjoeytimber.com.au/structural-pine-mpg10",
         "tag": "div",
         "classname": "dmNewParagraph u_1696189223",
-        "regex": r'\$\d+\.\d+'
+        "regex": r'\$\d+\.\d+',
+        "unit": "lm"
     },
     "Bunnings": {
-        "url": "https://www.bunnings.com.au/90-x-45mm-framing-mgp10-h2-blue-pine-6-0m_p8031034",
+        "url": "https://www.bunnings.com.au/90-x-45mm-framing-mgp10-h2-blue-pine-3-9m_p8031027",
         "tag": "p",
-        "classname": "sc-cb9c4042-3 iGDFOw",
-        "regex": r'\$\d+\.\d+'
+        "classname": "sc-ef11ce11-3 kiVfla",
+        "regex": r'\$\d+\.\d+',
+        "unit": 3.9
     },
     "Canterbury Timber": {
         "url": "https://canterburytimbers.com.au/buy/h2-timber-treated-pine-mgp10-90-x-45/",
         "tag": "span",
         "classname": "price price--withTax",
-        "regex": r'\s-\s\$\d+\.\d+'
+        "regex": r'\s-\s\$\d+\.\d+',
+        "unit": 6.0
     }
 }
 
@@ -53,11 +60,17 @@ for supplier in suppliers:
   tag = suppliers[supplier]["tag"]
   classname = suppliers[supplier]["classname"]
   regex = suppliers[supplier]["regex"]
+  unit = suppliers[supplier]["unit"]
 
   html = scraper.retrieve_html(url)
   try:
-    price = scraper.soup_finder(html, tag, classname, regex)
-    print(f"The price at {supplier} is {price}")
-  except AttributeError:
-    print(f"Error: Incorrect link or unable to find specified tag and class for {supplier}")
-    continue
+    price = float(scraper.soup_finder(html, tag, classname, regex))
+    if unit != 6.0:
+      if unit == "lm":
+        price = price * 6.0
+      else:
+        price = price / unit * 6.0
+    print(f"The price at {supplier} is ${round(price,2)}")
+  except AttributeError as e:
+    # log the error message
+    logging.error(f"Error: Incorrect link or unable to find specified tag and class for {supplier} - {e}")

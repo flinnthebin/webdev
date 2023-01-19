@@ -25,24 +25,39 @@ class Scraper:
     price = re.search(regex, soup.find(tag, class_=classname).text).group().strip(" -")
     return price
 
-b_url = "https://www.bunnings.com.au/90-x-45mm-framing-mgp10-h2-blue-pine-6-0m_p8031034"
-b_tag = "p"
-b_classname = "sc-cb9c4042-3 iGDFOw"
-b_regex = r'\$\d+\.\d+'
-
-bj_url = "https://www.barrenjoeytimber.com.au/structural-pine-mpg10"
-bj_tag = "div"
-bj_classname = "dmNewParagraph u_1696189223"
-bj_regex = r'\$\d+\.\d+'
-
-c_url = "https://canterburytimbers.com.au/buy/h2-timber-treated-pine-mgp10-90-x-45/"
-c_tag = "span"
-c_classname = "price price--withTax"
-c_regex = r'\s-\s\$\d+\.\d+'
-
+suppliers = {
+    "Barrenjoey Timber": {
+        "url": "https://www.barrenjoeytimber.com.au/structural-pine-mpg10",
+        "tag": "div",
+        "classname": "dmNewParagraph u_1696189223",
+        "regex": r'\$\d+\.\d+'
+    },
+    "Bunnings": {
+        "url": "https://www.bunnings.com.au/90-x-45mm-framing-mgp10-h2-blue-pine-6-0m_p8031034",
+        "tag": "p",
+        "classname": "sc-cb9c4042-3 iGDFOw",
+        "regex": r'\$\d+\.\d+'
+    },
+    "Canterbury Timber": {
+        "url": "https://canterburytimbers.com.au/buy/h2-timber-treated-pine-mgp10-90-x-45/",
+        "tag": "span",
+        "classname": "price price--withTax",
+        "regex": r'\s-\s\$\d+\.\d+'
+    }
+}
 
 scraper = Scraper()
-html = scraper.retrieve_html(c_url)
-price = scraper.soup_finder(html, c_tag, c_classname, c_regex)
 
-print(price)
+for supplier in suppliers:
+  url = suppliers[supplier]["url"]
+  tag = suppliers[supplier]["tag"]
+  classname = suppliers[supplier]["classname"]
+  regex = suppliers[supplier]["regex"]
+
+  html = scraper.retrieve_html(url)
+  try:
+    price = scraper.soup_finder(html, tag, classname, regex)
+    print(f"The price at {supplier} is {price}")
+  except AttributeError:
+    print(f"Error: Incorrect link or unable to find specified tag and class for {supplier}")
+    continue

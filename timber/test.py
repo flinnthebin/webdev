@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 
 # configure the logging module
+# TODO: structure logging to time-series to as to provide 1Y min format
 logging.basicConfig(filename="scraper.log", level=logging.ERROR)
 
 class Scraper:

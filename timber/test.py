@@ -1,4 +1,4 @@
-##!/usr/bin/python3
+#!/usr/bin/python3
 
 import logging
 import re
@@ -22,13 +22,28 @@ class Scraper:
     html = browser.page_source
     browser.quit()
     return html
+
+    def soup_finder(self, html: str, tag: str, classname: str, regex: str) -> str:
+      # make the soup
+      soup = BeautifulSoup(html, 'lxml')
+      # find the tag and class in the html, regex to search for price, strip whitespace and `-` chars
+      price = re.search(regex, soup.find(tag, class_=classname).text).group().strip(" $-")
+      return price
   
-  def soup_finder(self, html: str, tag: str, classname: str, regex: str) -> str:
-    # make the soup
-    soup = BeautifulSoup(html, 'lxml')
-    # find the tag and class in the html, regex to search for price, strip whitespace and `-` chars
-    price = re.search(regex, soup.find(tag, class_=classname).text).group().strip(" $-")
-    return price
+    def soup_finder_all(self, html: str, tag: str, classname: str, regex: str) -> str:
+      # make the soup
+      soup = BeautifulSoup(html, 'lxml')
+      # find all elements matching the tag and class
+      elements = soup.find_all(tag, class_=classname)
+      if elements:
+        for element in elements:
+          match = re.search(regex, element.text)
+          if match:
+            price = match.group().strip(" $-")
+            return price
+      else:
+            return None
+
 
 suppliers = {
     "Barrenjoey Timber": {
@@ -51,6 +66,13 @@ suppliers = {
         "classname": "price price--withTax",
         "regex": r'\s-\s\$\d+\.\d+',
         "unit": 6.0
+    },
+    "Blacktown Building Supplies": {
+        "url": "https://www.blacktownbuildingsupplies.com.au/product/structural-pine-h2-termite-treated-mgp10-90-x-45/",
+        "tag": "span",
+        "classname": "woocommerce-Price-amount amount",
+        "regex": r'\d+.\d+',
+        "unit": 6.0
     }
 }
 
@@ -65,7 +87,7 @@ for supplier in suppliers:
 
   html = scraper.retrieve_html(url)
   try:
-    price = float(scraper.soup_finder(html, tag, classname, regex))
+    price = float(scraper.soup_finder_all(html, tag, classname, regex))
     if unit != 6.0:
       if unit == "lm":
         price = price * 6.0

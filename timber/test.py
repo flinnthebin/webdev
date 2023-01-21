@@ -30,6 +30,8 @@ class Scraper:
       price = re.search(regex, soup.find(tag, class_=classname).text).group().strip(" $-")
       return price
   
+    # not functioning correctly - bugfix
+    # scraper has no object attribute "soup_finder_all"
     def soup_finder_all(self, html: str, tag: str, classname: str, regex: str) -> str:
       # make the soup
       soup = BeautifulSoup(html, 'lxml')

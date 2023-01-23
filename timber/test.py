@@ -31,6 +31,7 @@ class Scraper:
       return price
   
     # not functioning correctly - bugfix
+    # UNSURE WHY NOT WORKING!?
     # scraper has no object attribute "soup_finder_all"
     def soup_finder_all(self, html: str, tag: str, classname: str, regex: str) -> str:
       # make the soup

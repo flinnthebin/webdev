@@ -1,0 +1,4 @@
+- fix broken html grab for BBS
+- aggregate counter
+- price per lineal metre?
+- UI - how complex? tables, cheapest overall supplier?
